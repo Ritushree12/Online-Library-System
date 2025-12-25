@@ -8,7 +8,7 @@ export default function BookDetails() {
 
   const book = useSelector((state) => state.books.find((b) => b.id === id));
 
-  if (!book) return <p>Book not found.</p>;
+  if (!book) return <p className="error-msg overlay">Book not found.</p>;
 
   return (
     <div className="overlay">
