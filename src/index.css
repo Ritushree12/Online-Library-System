@@ -5,12 +5,15 @@
   --primary-bg: #6e260e;
   --secondary-bg: #6e260e;
   --tertiary-bg: #6e260e;
+  --button-back: #808000;
+  --back-button-hover: #556b2f;
 
   /* Text + hover colors */
   --text-color: #c19a6b;
   --hover-color: #4a0404;
   --author-color: #9c8e77;
   --error-color: #c04000;
+  --book-content-color: #e1c16e;
 
   --link-color: #d4af37; /* gold example */
   --link-hover: #f5d27a; /* lighter gold */
@@ -212,6 +215,19 @@ textarea::placeholder {
   font-size: var(--content-size);
   transition: background-color 0.2s ease;
 }
+.back-button {
+  padding: 10px 15px;
+  background-color: var(--button-back);
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: var(--content-size);
+  transition: background-color 0.2s ease;
+}
+.back-button:hover {
+  background-color: var(--back-button-hover);
+}
 
 .library-button:hover {
   background-color: var(--button-hover);
@@ -278,6 +294,28 @@ h2 {
 }
 .add-book {
   margin: 20px;
+}
+.book-detail-description {
+  margin-top: 10px;
+  line-height: 1.5;
+  font-size: var(--content-size);
+  color: var(--book-content-color);
+}
+.book-detail-rating {
+  margin-top: 10px;
+  font-size: var(--content-size);
+  color: var(--book-content-color);
+}
+.book-detail-title {
+  font-size: var(--heading-size);
+  margin-bottom: 10px;
+}
+.book-detail-image img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }
 /* Mobile responsive */
 @media (max-width: 600px) {

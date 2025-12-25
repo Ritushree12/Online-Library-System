@@ -11,20 +11,23 @@ export default function BookDetails() {
   if (!book) return <p>Book not found.</p>;
 
   return (
-    <div>
-      <h2>{book.title}</h2>
+    <div className="overlay">
+      <div className="book-detail-image">
+        {book.image && <img src={book.image} alt={book.title} />}
+      </div>
+      <h2 className="book-detail-title">{book.title}</h2>
 
-      <p>
+      <p className="author">
         <strong>Author:</strong> {book.author}
       </p>
-      <p>
+      <p className="book-detail-description">
         <strong>Description:</strong> {book.description}
       </p>
-      <p>
+      <p className="book-detail-rating">
         <strong>Rating:</strong> ⭐ {book.rating}
       </p>
 
-      <button className="library-button" onClick={() => navigate("/books")}>
+      <button className="back-button" onClick={() => navigate("/books")}>
         Back to Browse
       </button>
     </div>
