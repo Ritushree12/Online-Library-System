@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom"; // ✅ ADD THIS
+import { Link } from "react-router-dom";
 import { addBook } from "../features/books/booksSlice";
+import "../index.css";
 
 export default function BookCard({ book }) {
   const dispatch = useDispatch();

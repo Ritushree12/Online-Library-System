@@ -49,7 +49,7 @@ export default function AddBook() {
 
   return (
     <div>
-      <h2>Add New Book</h2>
+      <h2 className="add-new-book">Add New Book</h2>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
 
