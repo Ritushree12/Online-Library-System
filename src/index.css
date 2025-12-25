@@ -1,5 +1,9 @@
+/* ===== FONT IMPORTS ===== */
+/* Import Google Fonts for typography */
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+/* ===== CSS CUSTOM PROPERTIES (VARIABLES) ===== */
+/* Define color scheme and typography variables for consistent theming */
 :root {
   /* Background colors */
   --primary-bg: #6e260e;
@@ -29,6 +33,8 @@
   --error-size: 12px;
 }
 
+/* ===== GLOBAL STYLES ===== */
+/* Base styles for the entire application */
 body {
   margin: 0;
   background-color: var(--primary-bg);
@@ -41,6 +47,8 @@ body {
   font-weight: 700;
   color: var(--text-color);
 }
+
+/* Link styling */
 a {
   color: var(--link-color);
   text-decoration: none;
@@ -51,19 +59,28 @@ a:focus {
   color: var(--link-hover);
   text-decoration: underline;
 }
+
+/* ===== LAYOUT COMPONENTS ===== */
+/* Container and overlay styles for page structure */
 .container {
   padding: 20px;
 }
+
 .overlay {
   inset: 0;
   background: rgba(0, 0, 0, 0.6); /* dark overlay */
   padding: 20px;
   border-radius: 7px;
 }
+
+/* Main content area with top padding to avoid navbar overlap */
 main,
 .page-content {
   padding-top: 80px; /* to avoid overlap with fixed navbar */
 }
+
+/* ===== NAVIGATION ===== */
+/* Fixed navigation bar at the top of the page */
 .navbar {
   display: flex;
   position: fixed;
@@ -78,17 +95,44 @@ main,
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   z-index: 1000;
 }
+
 .logo {
   font-weight: 1000;
   font-size: var(--heading-size);
   cursor: pointer;
 }
+
 .navbar a {
   color: var(--text-color);
   margin-left: 12px;
   text-decoration: none;
 }
 
+.navbar .links {
+  display: flex;
+  gap: 18px;
+}
+
+.navbar .links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.navbar .links a:hover {
+  background: var(--hover-color);
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: var(--sub-heading-size);
+}
+
+/* ===== PAGE SECTIONS ===== */
+/* General section styling for full-height pages */
 .section {
   min-height: 100vh;
   display: flex;
@@ -97,6 +141,8 @@ main,
   align-items: center; /* keep heading centered */
 }
 
+/* ===== BOOK CARDS AND DISPLAY ===== */
+/* Grid layout for displaying multiple book cards */
 .popular-books {
   display: flex; /* use flex layout */
   justify-content: center; /* center cards horizontally */
@@ -109,6 +155,7 @@ main,
   width: 100%;
 }
 
+/* Individual book card styling */
 .card {
   box-sizing: border-box;
 
@@ -139,6 +186,7 @@ main,
   object-fit: cover;
   border-radius: 6px;
 }
+
 .card h4 {
   margin: 0;
   font-size: var(--content-size);
@@ -149,39 +197,23 @@ main,
   max-height: 70px;
   overflow-y: auto;
 }
+
 .card a,
 .card button {
   align-self: center;
   margin-top: auto; /* pushes button to bottom — clean look */
 }
 
+/* ===== LISTS ===== */
+/* Remove default bullets from lists */
 .no-bullets {
   list-style-type: none;
   padding-left: 0;
   color: var(--bullet-color);
 }
 
-.navbar .links {
-  display: flex;
-  gap: 18px;
-}
-
-.navbar .links a {
-  color: var(--text-color);
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 10px;
-  border-radius: 6px;
-  transition: 0.2s ease;
-}
-.navbar .links a:hover {
-  background: var(--hover-color);
-}
-.navbar h2 {
-  margin: 0;
-  font-size: var(--sub-heading-size);
-}
-
+/* ===== FORM ELEMENTS ===== */
+/* Input field styling */
 .form-input {
   padding: 10px 12px;
   font-size: var(--content-size);
@@ -190,14 +222,19 @@ main,
   outline: none;
   transition: all 0.2s ease-in-out;
 }
+
 .form-input:focus {
   border-color: var(--text-color);
   box-shadow: 0 0 5px var(--text-color);
 }
+
+/* Textarea styling */
 textarea {
   resize: vertical; /* allows vertical resizing */
   min-height: 100px;
 }
+
+/* Placeholder text styling */
 .form-input::placeholder,
 textarea::placeholder {
   font-family: inherit; /* use same font as input */
@@ -205,6 +242,9 @@ textarea::placeholder {
   color: var(--button-bg); /* optional styling */
   opacity: 1; /* ensure browser doesn't fade it */
 }
+
+/* ===== BUTTONS ===== */
+/* Primary button styling */
 .library-button {
   padding: 10px 15px;
   background-color: var(--button-bg);
@@ -215,6 +255,12 @@ textarea::placeholder {
   font-size: var(--content-size);
   transition: background-color 0.2s ease;
 }
+
+.library-button:hover {
+  background-color: var(--button-hover);
+}
+
+/* Back button styling */
 .back-button {
   padding: 10px 15px;
   background-color: var(--button-back);
@@ -225,22 +271,38 @@ textarea::placeholder {
   font-size: var(--content-size);
   transition: background-color 0.2s ease;
 }
+
 .back-button:hover {
   background-color: var(--back-button-hover);
 }
 
-.library-button:hover {
-  background-color: var(--button-hover);
+/* ===== PAGE-SPECIFIC STYLES ===== */
+/* Home page styling */
+.home-page {
+  text-align: center;
 }
+
+.home-page h2 {
+  font-size: var(--heading-size);
+}
+
+.home-page h3 {
+  font-size: var(--sub-heading-size);
+}
+
+/* Add book page styling */
 .add-new-book {
   margin-bottom: 20px;
   font-size: var(--sub-heading-size);
   color: var(--text-color);
   text-shadow: 2px 2px 4px var(--primary-bg);
 }
-.home-page {
-  text-align: center;
+
+.add-book {
+  margin: 20px;
 }
+
+/* Browse books page styling */
 .browse-books {
   margin-top: 20px;
   color: var(--text-color);
@@ -255,15 +317,66 @@ textarea::placeholder {
 h2 {
   font-size: var(--sub-heading-size);
 }
-.home-page h2 {
-  font-size: var(--heading-size);
-}
-.home-page h3 {
-  font-size: var(--sub-heading-size);
-}
+
+/* Search area styling */
 .search-area {
   display: flex;
 }
+
+/* Search input styling */
+.browse-books-search {
+  padding: 10px;
+  border-radius: 7px;
+  font-size: var(--content-size);
+  border: 1px solid var(--text-color);
+  background-color: var(--link-hover);
+}
+
+.browse-books-search:focus {
+  outline: none;
+  border-color: var(--text-color);
+  box-shadow: 0 0 10px var(--text-color);
+}
+
+/* ===== BOOK DETAILS PAGE ===== */
+/* Book details specific styling */
+.book-detail-title {
+  font-size: var(--heading-size);
+  margin-bottom: 10px;
+}
+
+.book-detail-image img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.book-detail-description {
+  margin-top: 10px;
+  line-height: 1.5;
+  font-size: var(--content-size);
+  color: var(--book-content-color);
+}
+
+.book-detail-rating {
+  margin-top: 10px;
+  font-size: var(--content-size);
+  color: var(--book-content-color);
+}
+
+/* Author text styling */
+.author {
+  font-style: italic;
+  color: var(--author-color);
+  font-size: var(--author-size);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ===== ERROR MESSAGES ===== */
+/* Error message styling */
 .error-msg {
   text-align: center; /* centers text inside <p> */
   grid-column: 1 / -1; /* span across all columns in the grid */
@@ -273,55 +386,15 @@ h2 {
   margin: 10px 0;
   font-size: var(--error-size);
 }
-.browse-books-search {
-  padding: 10px;
-  border-radius: 7px;
-  font-size: var(--content-size);
-  border: 1px solid var(--text-color);
-  background-color: var(--link-hover);
-}
-.browse-books-search:focus {
-  outline: none;
-  border-color: var(--text-color);
-  box-shadow: 0 0 10px var(--text-color);
-}
-.author {
-  font-style: italic;
-  color: var(--author-color);
-  font-size: var(--author-size);
-  margin: 0;
-  line-height: 1.3;
-}
-.add-book {
-  margin: 20px;
-}
-.book-detail-description {
-  margin-top: 10px;
-  line-height: 1.5;
-  font-size: var(--content-size);
-  color: var(--book-content-color);
-}
-.book-detail-rating {
-  margin-top: 10px;
-  font-size: var(--content-size);
-  color: var(--book-content-color);
-}
-.book-detail-title {
-  font-size: var(--heading-size);
-  margin-bottom: 10px;
-}
-.book-detail-image img {
-  width: 200px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 15px;
-}
+
+/* Invalid route (404) styling */
 .invalid-route {
   color: var(--error-color);
   font-size: var(--content-size);
 }
-/* Mobile responsive */
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Mobile responsive adjustments */
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;

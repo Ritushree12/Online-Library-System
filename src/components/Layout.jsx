@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
 import "../index.css";
 
-// Layout wraps pages that SHOULD have a header
+// Layout wraps pages that show the navbar
 export default function Layout() {
   return (
     <>
