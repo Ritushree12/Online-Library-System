@@ -17,7 +17,6 @@ export default function Home() {
           <li key={c}>{c}</li>
         ))}
       </ul>
-
       <div className="section">
         <h3>Popular Books</h3>
         <div className="popular-books">
