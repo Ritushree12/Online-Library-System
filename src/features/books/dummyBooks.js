@@ -1,0 +1,48 @@
+// Dummy initial data
+export default [
+  {
+    id: "1",
+    title: "The Silent Storm",
+    author: "Ava Carter",
+    description: "A dramatic tale of survival and courage.",
+    image: "https://picsum.photos/200/300?random=1",
+    rating: 4.5,
+    category: "Fiction",
+  },
+  {
+    id: "2",
+    title: "Future of Tomorrow",
+    author: "Ryan Lee",
+    description: "Sci-fi journey through time and galaxies.",
+    image: "https://picsum.photos/200/300?random=2",
+    rating: 4.2,
+    category: "Sci-Fi",
+  },
+  {
+    id: "3",
+    title: "Mind Over Matter",
+    author: "Sophia Miles",
+    description: "Non-fiction book on human psychology.",
+    image: "https://picsum.photos/200/300?random=3",
+    rating: 4.8,
+    category: "Non-Fiction",
+  },
+  {
+    id: "4",
+    title: "Whispers in the Wind",
+    author: "Liam Scott",
+    description: "A suspenseful mystery unraveling dark secrets.",
+    image: "https://picsum.photos/200/300?random=4",
+    rating: 4.1,
+    category: "Mystery",
+  },
+  {
+    id: "5",
+    title: "Cooking Made Easy",
+    author: "Emma Brown",
+    description: "Delicious recipes for everyday meals.",
+    image: "https://picsum.photos/200/300?random=5",
+    rating: 4.6,
+    category: "Cooking",
+  },
+];
