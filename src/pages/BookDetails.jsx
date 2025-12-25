@@ -24,7 +24,9 @@ export default function BookDetails() {
         <strong>Rating:</strong> ⭐ {book.rating}
       </p>
 
-      <button onClick={() => navigate("/books")}>Back to Browse</button>
+      <button className="library-button" onClick={() => navigate("/books")}>
+        Back to Browse
+      </button>
     </div>
   );
 }

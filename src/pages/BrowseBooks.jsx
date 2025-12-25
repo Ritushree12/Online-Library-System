@@ -55,20 +55,27 @@ export default function BrowseBooks() {
     );
 
   return (
-    <div>
+    <div className="overlay browse-books">
       <h2>Browse Books {category ? `(${category})` : ""}</h2>
+      <div className="search-area">
+        <input
+          className="browse-books-search"
+          type="text"
+          placeholder="Search by title or author..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
 
-      <input
-        type="text"
-        placeholder="Search by title or author..."
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-
-      <button onClick={fetchGoogleBooks} style={{ marginLeft: 10 }}>
-        Fetch From Google Books
-      </button>
-
+        <button
+          className="library-button"
+          onClick={fetchGoogleBooks}
+          style={{ marginLeft: 10 }}
+        >
+          Fetch From Google Books
+        </button>
+      </div>
+      <br />
+      <br />
       <div style={{ marginTop: "10px" }}>
         <Link to="/books/Fiction">Fiction</Link> |{" "}
         <Link to="/books/Non-Fiction">Non-Fiction</Link> |{" "}
@@ -76,11 +83,11 @@ export default function BrowseBooks() {
       </div>
 
       <h3>Local Library Books</h3>
-      <div className="grid">
+      <div className="popular-books">
         {filtered.length > 0 ? (
           filtered.map((book) => <BookCard key={book.id} book={book} />)
         ) : (
-          <p>No books found.</p>
+          <p className="error-msg">No books found from the local library.</p>
         )}
       </div>
 
@@ -88,13 +95,17 @@ export default function BrowseBooks() {
 
       {/* 👇 Loading + Error messages appear here */}
       {loading && <p>Loading books…</p>}
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error-msg">{error}</p>}
 
-      <div className="grid">
+      <div className="popular-books">
         {googleBooks.length > 0
           ? googleBooks.map((book) => <BookCard key={book.id} book={book} />)
           : !loading &&
-            !error && <p>Click “Fetch From Google Books” to load books.</p>}
+            !error && (
+              <p className="error-msg">
+                Click “Fetch From Google Books” to load books.
+              </p>
+            )}
       </div>
     </div>
   );

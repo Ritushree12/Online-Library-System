@@ -48,7 +48,7 @@ export default function AddBook() {
   }
 
   return (
-    <div>
+    <div className="overlay add-book">
       <h2 className="add-new-book">Add New Book</h2>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
@@ -91,7 +91,7 @@ export default function AddBook() {
           onChange={handleChange}
         />
         <br /> <br />
-        <button className="form-button" type="submit">
+        <button className=" library-button" type="submit">
           Add Book
         </button>
       </form>

@@ -8,7 +8,7 @@ export default function Home() {
   const categories = ["Fiction", "Non-Fiction", "Sci-Fi"];
 
   return (
-    <div>
+    <div className="home-page overlay">
       <h1>Welcome to the Online Library</h1>
 
       <h3>Book Categories</h3>
@@ -18,11 +18,13 @@ export default function Home() {
         ))}
       </ul>
 
-      <h3>Popular Books</h3>
-      <div className="grid">
-        {books.slice(0, 3).map((book) => (
-          <BookCard key={book.id} book={book} />
-        ))}
+      <div className="section">
+        <h3>Popular Books</h3>
+        <div className="popular-books">
+          {books.slice(0, 3).map((book) => (
+            <BookCard key={book.id} book={book} />
+          ))}
+        </div>
       </div>
     </div>
   );
