@@ -6,9 +6,9 @@ export default function NotFound() {
   const location = useLocation();
 
   return (
-    <div style={{ textAlign: "center", marginTop: "50px" }}>
+    <div style={{ textAlign: "center", marginTop: "50px" }} className="overlay">
       <h1>404 — Page Not Found</h1>
-      <p>
+      <p className="invalid-route">
         Invalid route: <strong>{location.pathname}</strong>
       </p>
 
