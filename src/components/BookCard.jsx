@@ -1,14 +1,20 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addBook } from "../features/books/booksSlice";
 import "../index.css";
 
 export default function BookCard({ book }) {
+  const libraryBooks = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
   function handleAdd() {
-    dispatch(addBook(book));
-    alert("Book added to library!");
+    const exists = libraryBooks.find((b) => b.id === book.id);
+    if (!exists) {
+      dispatch(addBook(book));
+      alert("Book added to library!");
+    } else {
+      alert("Book already in library!");
+    }
   }
 
   return (
